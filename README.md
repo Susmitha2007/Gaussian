@@ -17,13 +17,31 @@ To write a program to find the solution of a matrix using Gaussian Elimination.
 ```
 /*
 Program to find the solution of a matrix using Gaussian Elimination.
-Developed by: 
-RegisterNumber: 
+Developed by: Nara Guna Susmitha
+RegisterNumber: 24010204
 */
+```
+import numpy as np
+from scipy.linalg import lu
+a=np.array(eval(input()))
+P,L,U=lu(a)
+print(L)
+print(U)
+
+```
+import numpy as np
+from scipy.linalg import lu_factor,lu_solve
+a=np.array (eval(input()))
+b=np.array (eval(input()))
+lu,piv=lu_factor(a)
+x=lu_solve((lu,piv),b)
+print(x)
 ```
 
 ## Output:
-![gaussian elimination]()
+![output1](<Screenshot 2024-11-20 223652-2.png>)
+![output2](<Screenshot 2024-11-20 223729-1.png>)
+
 
 
 ## Result:
