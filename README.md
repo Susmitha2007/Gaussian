@@ -16,33 +16,38 @@ To write a program to find the solution of a matrix using Gaussian Elimination.
 ## Program:
 ```
 /*
-Program to find the solution of a matrix using Gaussian Elimination.
+'''Program to solve a matrix using Gaussian elimination without partial pivoting.
 Developed by: Nara Guna Susmitha
 RegisterNumber: 24010204
-*/
-```
+'''
 import numpy as np
-from scipy.linalg import lu
-a=np.array(eval(input()))
-P,L,U=lu(a)
-print(L)
-print(U)
+n=int(input())
+matrix=np.zeros((n,n+1))
+x=np.zeros(n)
+for i in range(n):
+    for j in range(n+1):
+        matrix[i][j]=int(input())
+for i in range(n):
+    for j in range(i+1,n):
+        ratio=matrix[j][i]/matrix[i][i]
+        for k in range(n+1):
+            matrix[j][k]=matrix[j][k]-ratio*matrix[i][k]
+#Back substitution
+x[n-1]=matrix[n-1][n]/matrix[n-1][n-1]
+for i in range(n-2,-1,-1):
+    x[i]=matrix[i][n]
+    for j in range(i+1,n):
+        x[i]=x[i]-matrix[i][j]*x[j]
+    x[i]=x[i]/matrix[i][i]
+for i in range(n):
+    print("X%d = %0.2f" %(i,x[i]),end=" ")
 
-```
-import numpy as np
-from scipy.linalg import lu_factor,lu_solve
-a=np.array (eval(input()))
-b=np.array (eval(input()))
-lu,piv=lu_factor(a)
-x=lu_solve((lu,piv),b)
-print(x)
-```
+
+
+
 
 ## Output:
-![output1](<Screenshot 2024-11-20 223652-2.png>)
-![output2](<Screenshot 2024-11-20 223729-1.png>)
-
-
+c:\Users\admin\Pictures\Screenshots\Screenshot 2024-12-04 133715.png
 
 ## Result:
 Thus the program to find the solution of a matrix using Gaussian Elimination is written and verified using python programming.
