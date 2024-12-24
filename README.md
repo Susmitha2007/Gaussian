@@ -8,10 +8,10 @@ To write a program to find the solution of a matrix using Gaussian Elimination.
 2. Anaconda – Python 3.7 Installation / Moodle-Code Runner
 
 ## Algorithm
-1. 
-2. 
-3. 
-4. 
+1. Interchange and equation (or ).
+2. Divide the equation by (or ).
+3. Add times the equation to the equation (or ). Add times the equation to the equation (or ).
+4. Multiply the equation by (or ). 
 
 ## Program:
 ```
@@ -43,11 +43,12 @@ for i in range(n):
     print("X%d = %0.2f" %(i,x[i]),end=" ")
 
 
-
+```
 
 
 ## Output:
-c:\Users\admin\Pictures\Screenshots\Screenshot 2024-12-04 133715.png
+
+![output](<Screenshot 2024-12-24 151456.png>)
 
 ## Result:
 Thus the program to find the solution of a matrix using Gaussian Elimination is written and verified using python programming.
